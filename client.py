@@ -4,7 +4,12 @@ import subprocess
 from datetime import datetime
 from optparse import OptionParser
 
+# HALF DUPLEX haberleşme sağlayan python kodu
+# Bir önceki kodun değiştirilimş halidir
+
 Parsers = OptionParser()
+# Kullanıcıdan verilerini parametre olarak girebilmesini sağlamak için
+# bir OptionParser oluşturdum.
 Parsers.add_option("-i", dest="ip", help="IP address")
 Parsers.add_option("-p", dest="port", help="Port number")
 
@@ -20,6 +25,7 @@ try:
     print("communication will be done in half duplex\n\n")
     while True:
         try:
+            # Kullanıcının karşı taraf ile bağlantı açmasını ve veri iletmesini saglayan kısım. 
             client_socket = socket.socket()
             client_socket.connect((str(ip_address), port_nmbrs))
 
